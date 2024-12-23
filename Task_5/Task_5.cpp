@@ -57,6 +57,14 @@ int solution(int n)
             h_live++;
     }
     std::cout << "\nОсталось рабов: " << h_live;
+    std::cout << "\n\nНомер бочки(в троичной си): ";
+    for (int i = 0; i < 5; i++) {
+        if (live_or_dead[i] == 0) {
+            std::cout << 0;
+        }
+        else
+        std::cout << "?";
+    }
     std::cout << "\n\nВторой день:\n\n";
 
     for (int j = 0; j < 5; j++) // O(n)
@@ -93,7 +101,16 @@ int solution(int n)
             live_count++;
         result += live_or_dead[i] * pow(3, 4 - i);
     }
-    std::cout << "Выживших рабов: " << live_count;
+    for (int i = 0; i < 5; i++) // O(n)
+    {
+        std::cout << "\x1b[1m" << i + 1 << " раб: " << "\x1b[0m";
+        (live_or_dead[i] == 0 || live_or_dead[i] == 1) ? std::cout << "\x1b[31mмертв\n\x1b[0m" : std::cout << "\x1b[32mжив\n\x1b[0m";
+    }
+    std::cout << "\nНомер бочки(в троичной си): ";
+    for (int i = 0; i < 5; i++) {
+        std::cout << live_or_dead[i];
+    }
+    std::cout << "\n\nВыживших рабов: " << live_count;
     return result;
 }
 

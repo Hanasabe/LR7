@@ -141,9 +141,9 @@ int main()
     while (true) {
         ll num1 = 0, num2 = 0;  
         std::cout << "Введите 1 число: ";  
-        std::cin >> num1;  
+        num1 = prov(); 
         std::cout << "\nВведите 2 число: ";  
-        std::cin >> num2;  
+        num2 = prov();  
         std::cout << "\nИх сумма(в естественном виде): ";  
         std::cout << konetc(solution(vmeste(num1), vmeste(num2))); // O(n)
         menu();  
